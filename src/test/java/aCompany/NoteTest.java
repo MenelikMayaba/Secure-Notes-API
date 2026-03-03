@@ -1,6 +1,9 @@
-package com.example.securitydemo.entity;
+package aCompany;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import aCompany.entity.Note;
+import aCompany.entity.User;
 import org.junit.jupiter.api.Test;
 
 class NoteTest {
