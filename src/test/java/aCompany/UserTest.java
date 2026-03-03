@@ -1,7 +1,10 @@
-package aCompany.entity;
+package aCompany;
 
-import static org.junit.jupiter.api.Assertions.*;
+import aCompany.entity.Roles;
+import aCompany.entity.User;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class UserTest {
 
@@ -24,13 +27,13 @@ class UserTest {
         User user = new User();
         user.setUsername("tester");
         // assume your User entity defaults role to "USER"
-        assertEquals("USER", user.getRole());
+        assertEquals(Roles.USER, user.getRole());
     }
 
     @Test
     void shouldSetCustomRole() {
         User user = new User();
-        user.setRole("ADMIN");
-        assertEquals("ADMIN", user.getRole());
+        user.setRole(Roles.USER);
+        assertEquals(Roles.USER, user.getRole());
     }
 }
