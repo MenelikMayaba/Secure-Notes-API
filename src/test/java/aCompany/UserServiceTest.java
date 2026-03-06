@@ -1,16 +1,18 @@
 package aCompany;
 
-public class UserServiceTest {
-}
-package com.example.securitydemo.service;
-
 import static org.junit.jupiter.api.Assertions.*;
-        import org.junit.jupiter.api.BeforeEach;
+
+import aCompany.Service.UserService;
+import aCompany.entity.Roles;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
-        import org.springframework.security.crypto.password.PasswordEncoder;
-import com.example.securitydemo.repository.UserRepository;
-import com.example.securitydemo.entity.User;
+import org.springframework.context.support.BeanDefinitionDsl;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import aCompany.Repository.UserRepository;
+import aCompany.entity.User;
+
+import javax.management.relation.Role;
 
 class UserServiceTest {
 
@@ -54,8 +56,8 @@ class UserServiceTest {
         Mockito.when(passwordEncoder.encode("password"))
                 .thenReturn("encodedpassword");
 
-        userService.register(user);
+        userService.register((user));
 
-        assertEquals("USER", user.getRole());
+        assertEquals(Roles.USER, user.getRole());
     }
 }
