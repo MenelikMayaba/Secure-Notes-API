@@ -1,20 +1,26 @@
 package aCompany.Service;
 
+import aCompany.Repository.NoteRepository;
+import aCompany.entity.Note;
 import aCompany.entity.User;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NoteService {
 
     private String title;
     private String content;
     private User user;
+    private NoteRepository noteRepository;
 
     public NoteService() {
     }
 
-    public NoteService(String title, User user, String content) {
-        this.title = title;
-        this.user = user;
-        this.content = content;
+    @Autowired
+    public NoteService(NoteRepository noteRepository) {
+        this.noteRepository = noteRepository;
     }
 
     public String getTitle() {
@@ -39,5 +45,11 @@ public class NoteService {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Transactional
+    public void createNoteForUser(Note note, User user){
+        note.setUsername(user.getUsername());
+        noteRepository.save(note);
     }
 }

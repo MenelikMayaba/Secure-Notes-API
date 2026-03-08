@@ -54,4 +54,9 @@ public class User {
     public void setRole(Roles role) {
         this.Role = role;
     }
+
+    public Object getTitle() {
+        return null;
+
+    }
 }

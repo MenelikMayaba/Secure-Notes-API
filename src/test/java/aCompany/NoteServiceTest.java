@@ -1,12 +1,12 @@
-package com.example.securitydemo.service;
+package aCompany;
 
-import static org.junit.jupiter.api.Assertions.*;
+import aCompany.Service.NoteService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
-import com.example.securitydemo.entity.Note;
-import com.example.securitydemo.entity.User;
-import com.example.securitydemo.repository.NoteRepository;
+import aCompany.entity.Note;
+import aCompany.entity.User;
+import aCompany.Repository.NoteRepository;
 
 class NoteServiceTest {
 
@@ -33,7 +33,7 @@ class NoteServiceTest {
         noteService.createNoteForUser(note, user);
 
         Mockito.verify(noteRepository).save(Mockito.argThat(n ->
-                n.getUser().getUsername().equals("yaba") &&
+                n.getUsername().equals("yaba") &&
                         n.getTitle().equals("Test Note")
         ));
     }
