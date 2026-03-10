@@ -1,11 +1,14 @@
-package com.example.securitydemo.security;
+package aCompany;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import aCompany.Service.CustomUserDetailsService;
+import aCompany.entity.Roles;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
-import com.example.securitydemo.repository.UserRepository;
-import com.example.securitydemo.entity.User;
+import aCompany.Repository.UserRepository;
+import aCompany.entity.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 class CustomUserDetailsServiceTest {
@@ -26,7 +29,7 @@ class CustomUserDetailsServiceTest {
         User user = new User();
         user.setUsername("yaba");
         user.setPassword("encodedpassword");
-        user.setRole("USER");
+        user.setRole(Roles.valueOf("USER"));
 
         Mockito.when(userRepository.findByUsername("yaba"))
                 .thenReturn(java.util.Optional.of(user));
