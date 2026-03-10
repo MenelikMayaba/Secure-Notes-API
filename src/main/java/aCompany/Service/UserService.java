@@ -22,11 +22,10 @@ public class UserService {
 
     @Transactional
     public User register(User user){
-        User newUser = new User();
         String encodedPassword = passwordEncoder.encode(user.getPassword());
-        newUser.setPassword(encodedPassword);
-        newUser.setUsername(String.valueOf(user.getUsername()));
-        return userRepository.save(newUser);
+        user.setPassword(encodedPassword);
+        user.setUsername(String.valueOf(user.getUsername()));
+        return userRepository.save(user);
 
     }
 }
