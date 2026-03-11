@@ -1,0 +1,47 @@
+package aCompany.Controller;
+
+
+import aCompany.Repository.NoteRepository;
+import aCompany.Service.NoteService;
+import aCompany.entity.Note;
+import aCompany.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+@RestController
+@RequestMapping("/notes")
+public class NoteController {
+
+    @Autowired
+    private NoteService noteService;
+
+    @PostMapping
+    public ResponseEntity<Void> createNote(@RequestBody Note note, Authentication authentication) {
+        if (note == null || note.getTitle() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Note needs a title and cannot be null");
+
+        }
+
+        String userName = authentication.getName();
+
+        User user = new User();
+
+        try {
+            user.setUsername(userName);
+            noteService.createNoteForUser(note, user);
+
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "failed to create note");
+        }
+    }
+}

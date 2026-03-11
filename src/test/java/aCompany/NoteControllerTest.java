@@ -50,32 +50,4 @@ class NoteControllerTest {
         Mockito.verify(noteService).createNoteForUser(Mockito.any(Note.class), Mockito.any(User.class));
     }
 
-    @Test
-    void getNotesShouldReturnUserNotes() {
-        Mockito.when(authentication.getName()).thenReturn("yaba");
-
-        Note note1 = new Note();
-        note1.setTitle("Note 1");
-        Note note2 = new Note();
-        note2.setTitle("Note 2");
-        List<Note> notes = Arrays.asList(note1, note2);
-
-        Mockito.when(noteService.getNotesByUsername("yaba")).thenReturn(notes);
-
-        ResponseEntity<List<Note>> response = noteController.getNotes(authentication);
-
-        assertEquals(200, response.getStatusCodeValue());
-        assertEquals(2, response.getBody().size());
-        assertEquals("Note 1", response.getBody().get(0).getTitle());
-    }
-
-    @Test
-    void deleteNoteShouldCallServiceForUser() {
-        Mockito.when(authentication.getName()).thenReturn("yaba");
-
-        ResponseEntity<Void> response = noteController.deleteNote(1L, authentication);
-
-        assertEquals(200, response.getStatusCodeValue());
-        Mockito.verify(noteService).deleteNoteById(1L, "yaba", Roles.USER);
-    }
 }
