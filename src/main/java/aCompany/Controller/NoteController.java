@@ -11,11 +11,10 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/notes")
@@ -41,7 +40,25 @@ public class NoteController {
 
             return ResponseEntity.ok().build();
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "failed to create note");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "failed to create note", e);
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Note>> getNotes(@RequestBody Authentication authentication) {
+
+        String userName = authentication.getName();
+
+        List<Note> notes = noteService.getNotesByUsername(userName);
+        try {
+            for(Note note : notes){
+                System.out.println(note);
+
+            }
+
+            return ResponseEntity.ok(notes);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "failed to get notes from", e);
         }
     }
 }
