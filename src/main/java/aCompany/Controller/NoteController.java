@@ -4,6 +4,7 @@ package aCompany.Controller;
 import aCompany.Repository.NoteRepository;
 import aCompany.Service.NoteService;
 import aCompany.entity.Note;
+import aCompany.entity.Roles;
 import aCompany.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -60,5 +61,15 @@ public class NoteController {
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "failed to get notes from", e);
         }
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deleteNote(long l, Authentication authentication) {
+        String userName = authentication.getName();
+
+        noteService.deleteNoteById(l, userName, Roles.USER);
+
+        return ResponseEntity.ok().build();
+
     }
 }
