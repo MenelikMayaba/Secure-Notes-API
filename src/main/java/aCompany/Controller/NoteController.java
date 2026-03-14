@@ -12,9 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import java.util.*;
 
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/notes")
@@ -66,7 +65,7 @@ public class NoteController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteNote(@RequestParam long l, Authentication authentication) {
+    public ResponseEntity<User> deleteNote(@RequestParam long l, Authentication authentication) {
         String userName = authentication.getName();
 
         noteService.deleteNoteById(l, userName, Roles.USER);
