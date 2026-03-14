@@ -14,6 +14,7 @@ import org.springframework.security.core.Authentication;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,7 +43,11 @@ class NoteControllerTest {
         note.setTitle("Test Note");
         note.setContent("Content");
 
+        User user = new User();
+        user.setUsername("yaba");
+
         Mockito.when(authentication.getName()).thenReturn("yaba");
+        Mockito.when(userService.findByUsername("yaba")).thenReturn(Optional.of(user));
 
         ResponseEntity<Void> response = noteController.createNote(note, authentication);
 
@@ -73,7 +78,7 @@ class NoteControllerTest {
     void deleteNoteShouldCallServiceForUser() {
         Mockito.when(authentication.getName()).thenReturn("yaba");
 
-        ResponseEntity<Void> response = noteController.deleteNote(1L, authentication);
+        ResponseEntity<User> response = noteController.deleteNote(1L, authentication);
 
         assertEquals(200, response.getStatusCodeValue());
         Mockito.verify(noteService).deleteNoteById(1L, "yaba", Roles.USER);
