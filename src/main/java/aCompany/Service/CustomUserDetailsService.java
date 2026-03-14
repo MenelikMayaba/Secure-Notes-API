@@ -13,16 +13,15 @@ import java.util.Optional;
 
 @Service
 public class CustomUserDetailsService {
-    private User user;
     private PasswordEncoder passwordEncoder;
     private UserRepository userRepository;
 
     public CustomUserDetailsService() {
     }
      @Autowired
-    public CustomUserDetailsService(User user, UserRepository userRepository) {
-        this.user = user;
+    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
@@ -36,14 +35,4 @@ public class CustomUserDetailsService {
         }
 
     }
-
-    public User getUsername() {
-        return user;
-    }
-
-
-
-
-
-
 }

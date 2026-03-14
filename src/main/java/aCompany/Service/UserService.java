@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class UserService {
@@ -27,6 +29,10 @@ public class UserService {
         user.setUsername(String.valueOf(user.getUsername()));
         return userRepository.save(user);
 
+    }
+
+    public Optional<User> findByUsername(String userName) {
+        return userRepository.findByUsername(userName);
     }
 }
 

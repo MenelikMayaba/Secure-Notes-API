@@ -11,48 +11,47 @@ import javax.management.relation.Role;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String Username;
+    private String username;
 
-    private String Password;
+    private String password;
 
-    private Roles Role;
+    private Roles role;
 
     public User(){
-        this.Role = Roles.USER;
+        this.role = Roles.USER;
 
     }
 
 
     public User(String username, String password, Roles role) {
-        Username = username;
-        Password = password;
-        Role = role;
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public Roles getRole() {
-        return Roles.valueOf(Role.toString());
+        return role;
     }
 
     public void setRole(Roles role) {
-        this.Role = role;
+        this.role = role;
     }
 
     public Object getTitle() {
