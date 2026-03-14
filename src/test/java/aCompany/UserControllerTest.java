@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +19,9 @@ class UserControllerTest {
 
     @Mock
     private UserService userService;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
 
     @BeforeEach
     void setup() {
@@ -36,6 +40,7 @@ class UserControllerTest {
         registeredUser.setRole(Roles.USER);
 
         Mockito.when(userService.register(user)).thenReturn(registeredUser);
+        Mockito.when(passwordEncoder.encode("password")).thenReturn("encodedpassword");
 
         ResponseEntity<User> response = userController.register(user);
 

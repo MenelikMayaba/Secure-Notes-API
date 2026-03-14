@@ -34,6 +34,6 @@ class UserTest {
     void shouldSetCustomRole() {
         User user = new User();
         user.setRole(Roles.USER);
-        assertEquals(Roles.USER, user.getRole());
+        assertEquals(Roles.USER , user.getRole());
     }
 }
