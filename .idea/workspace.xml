@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d539c9e-f6da-4d25-bf37-1a5ba16a3c8e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/Mayaba GitHub Projects/Secure Notes API" value="3A1Hdut4dCb9ZOX2Mw81uQdlDg5" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3A1Hdut4dCb9ZOX2Mw81uQdlDg5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.CustomUserDetailsServiceTest.executor": "Run",
+    "JUnit.CustomUserDetailsServiceTest.loadUserByUsernameShouldReturnUserDetails.executor": "Run",
+    "JUnit.CustomUserDetailsServiceTest.loadUserByUsernameShouldThrowIfNotFound.executor": "Run",
+    "JUnit.NoteControllerTest.createNoteShouldCallService.executor": "Run",
+    "JUnit.NoteControllerTest.deleteNoteShouldCallServiceForUser.executor": "Run",
+    "JUnit.NoteControllerTest.executor": "Run",
+    "JUnit.NoteControllerTest.getNotesShouldReturnUserNotes.executor": "Run",
+    "JUnit.NoteServiceTest.createNoteShouldAttachUser.executor": "Run",
+    "JUnit.NoteTest.executor": "Run",
+    "JUnit.UserControllerTest.executor": "Run",
+    "JUnit.UserControllerTest.registerShouldReturnRegisteredUser.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.registerShouldEncodePasswordAndSaveUser.executor": "Run",
+    "JUnit.UserTest.executor": "Run",
+    "JUnit.UserTest.shouldSetAndGetUsername.executor": "Run",
+    "Maven.Secure-Notes-API [clean].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "D:/Mayaba GitHub Projects/Secure Notes API/src/main/java/aCompany/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="aCompany.Controller" />
+      <recent name="aCompany.Repository" />
+      <recent name="aCompany" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="aCompany" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.NoteControllerTest.createNoteShouldCallService">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aCompany.Main" />
+      <module name="Secure-Notes-API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aCompany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Secure-Notes-API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aCompany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aCompany" />
+      <option name="MAIN_CLASS_NAME" value="aCompany.NoteControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoteControllerTest.createNoteShouldCallService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Secure-Notes-API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aCompany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aCompany" />
+      <option name="MAIN_CLASS_NAME" value="aCompany.NoteControllerTest" />
+      <option name="METHOD_NAME" value="createNoteShouldCallService" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoteControllerTest.getNotesShouldReturnUserNotes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Secure-Notes-API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aCompany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aCompany" />
+      <option name="MAIN_CLASS_NAME" value="aCompany.NoteControllerTest" />
+      <option name="METHOD_NAME" value="getNotesShouldReturnUserNotes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Secure-Notes-API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aCompany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aCompany" />
+      <option name="MAIN_CLASS_NAME" value="aCompany.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Secure Notes API" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.NoteControllerTest.createNoteShouldCallService" />
+        <item itemvalue="JUnit.NoteControllerTest" />
+        <item itemvalue="JUnit.NoteControllerTest.getNotesShouldReturnUserNotes" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserControllerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d539c9e-f6da-4d25-bf37-1a5ba16a3c8e" name="Changes" comment="" />
+      <created>1771753249110</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771753249110</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
