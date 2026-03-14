@@ -1,21 +1,20 @@
 package aCompany.Controller;
 
 
-import aCompany.Repository.NoteRepository;
 import aCompany.Service.NoteService;
+import aCompany.Service.UserService;
 import aCompany.entity.Note;
 import aCompany.entity.Roles;
 import aCompany.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/notes")
@@ -23,6 +22,9 @@ public class NoteController {
 
     @Autowired
     private NoteService noteService;
+
+    @Autowired
+    private UserService userService;
 
     @PostMapping
     public ResponseEntity<Void> createNote(@RequestBody Note note, Authentication authentication) {
@@ -33,11 +35,11 @@ public class NoteController {
 
         String userName = authentication.getName();
 
-        User user = new User();
+        Optional<User> user = userService.findByUsername(userName);
 
         try {
-            user.setUsername(userName);
-            noteService.createNoteForUser(note, user);
+            user.get().setUsername(userName);
+            noteService.createNoteForUser(note, user.orElse(null));
 
             return ResponseEntity.ok().build();
         } catch (Exception e) {
@@ -46,7 +48,7 @@ public class NoteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Note>> getNotes(@RequestBody Authentication authentication) {
+    public ResponseEntity<List<Note>> getNotes(Authentication authentication) {
 
         String userName = authentication.getName();
 
@@ -64,7 +66,7 @@ public class NoteController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteNote(long l, Authentication authentication) {
+    public ResponseEntity<Void> deleteNote(@RequestParam long l, Authentication authentication) {
         String userName = authentication.getName();
 
         noteService.deleteNoteById(l, userName, Roles.USER);
