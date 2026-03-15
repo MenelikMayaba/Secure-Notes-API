@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d539c9e-f6da-4d25-bf37-1a5ba16a3c8e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aCompany/NoteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aCompany/NoteControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,7 @@
     "JUnit.CustomUserDetailsServiceTest.loadUserByUsernameShouldThrowIfNotFound.executor": "Run",
     "JUnit.NoteControllerTest.createNoteShouldCallService.executor": "Run",
     "JUnit.NoteControllerTest.deleteNoteShouldCallServiceForUser.executor": "Run",
+    "JUnit.NoteControllerTest.deleteNoteShouldHandleServiceException.executor": "Run",
     "JUnit.NoteControllerTest.executor": "Run",
     "JUnit.NoteControllerTest.getNotesShouldReturnUserNotes.executor": "Run",
     "JUnit.NoteServiceTest.createNoteShouldAttachUser.executor": "Run",
@@ -81,7 +83,7 @@
       <recent name="aCompany" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NoteControllerTest.createNoteShouldCallService">
+  <component name="RunManager" selected="JUnit.NoteControllerTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aCompany.Main" />
       <module name="Secure-Notes-API" />
@@ -126,6 +128,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NoteControllerTest.deleteNoteShouldHandleServiceException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Secure-Notes-API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aCompany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aCompany" />
+      <option name="MAIN_CLASS_NAME" value="aCompany.NoteControllerTest" />
+      <option name="METHOD_NAME" value="deleteNoteShouldHandleServiceException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NoteControllerTest.getNotesShouldReturnUserNotes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Secure-Notes-API" />
       <extension name="coverage">
@@ -142,21 +160,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Secure-Notes-API" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="aCompany.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="aCompany" />
-      <option name="MAIN_CLASS_NAME" value="aCompany.UserControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Secure Notes API" />
       <method v="2">
@@ -165,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NoteControllerTest.createNoteShouldCallService" />
         <item itemvalue="JUnit.NoteControllerTest" />
+        <item itemvalue="JUnit.NoteControllerTest.deleteNoteShouldHandleServiceException" />
+        <item itemvalue="JUnit.NoteControllerTest.createNoteShouldCallService" />
         <item itemvalue="JUnit.NoteControllerTest.getNotesShouldReturnUserNotes" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UserControllerTest" />
       </list>
     </recent_temporary>
   </component>
